@@ -1,8 +1,8 @@
 import numpy as np
 
-def nash(A_payoffs, B_payoffs, iterations=20000):
+def nash(A_payoffs, B_payoffs, iterations=10000):
     """
-    Approximate Nash equilibrium for a normal-form, two-player game.
+    Approximate Nash equilibrium for a two-player game.
     
     Each player's payoffs take the form of an N-by-M numpy array,
     where N is the number of actions the player can take, and
@@ -27,8 +27,10 @@ def nash(A_payoffs, B_payoffs, iterations=20000):
             a += 1
         return a
     
-    A_cumulative_regrets = np.zeros(A_actions, dtype=float) 
-    B_cumulative_regrets = np.zeros(B_actions, dtype=float)
+    #test this (make sure order of strategy matrices is right)
+    def EV(own_strategy, opp_strategy, payoffs):
+        p_matrix = np.outer(own_strategy, opp_strategy)
+        return np.sum(np.multiply(p_matrix, payoffs))
     
     for i in range(iterations):
         A = get_action(A_strategy)
