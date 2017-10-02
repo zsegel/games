@@ -16,7 +16,7 @@ def nash(A_payoffs, B_payoffs, iterations=20000):
   
     A_actions, B_actions = A_payoffs.shape
     
-    # initialize strategies for both players
+    # initialize uniform strategies for both players
     A_strategy = [1/float(A_actions)] * A_actions
     B_strategy = [1/float(B_actions)] * B_actions
     
