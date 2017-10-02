@@ -12,8 +12,6 @@ def nash(A_payoffs, B_payoffs, iterations=20000):
     number from the set {0, 1, ..., N-1}. Entry [i, j] in a player's
     payoff matrix represents the payoff to that player if they choose 
     action i and their opponent chooses action j.
-    
-    In a symmetric game, 
     """
   
     A_actions, B_actions = A_payoffs.shape
