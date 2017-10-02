@@ -32,6 +32,19 @@ def nash(A_payoffs, B_payoffs, iterations=10000):
         p_matrix = np.outer(own_strategy, opp_strategy)
         return np.sum(np.multiply(p_matrix, payoffs))
     
+    def make_p_combos(actions):
+        test_points = np.arange(0, 1.01, 0.01)
+        dims = np.meshgrid(*[testpoints for i in range(actions)])
+        
+    
+    [0, 1, 2]
+    [0, 1, 2]
+    [0, 1, 2]
+    
+    [0, 0, 0]
+    [1, 1, 1]
+    [2, 2, 2]
+    
     for i in range(iterations):
         A = get_action(A_strategy)
         B = get_action(B_strategy)
