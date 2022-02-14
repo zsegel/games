@@ -1,3 +1,5 @@
+# function make_p_combos isn't fully implemented?? check old laptop
+
 import numpy as np
 
 def nash(A_payoffs, B_payoffs, iterations=10000):
